@@ -59,7 +59,6 @@ def process_data(config: DataProcessingConfig) -> None:
         dataset_cleaner_manager = instantiate(config.dataset_cleaner_manager)
         df = dataset_reader_manager.read_data(config.dask_cluster.n_workers)
         print(df.compute().head())
-        return
 
 
         logger.info("Cleaning data ...")
